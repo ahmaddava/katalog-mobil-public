@@ -1,0 +1,247 @@
+// resources/scss/_custom-styles.scss
+
+// Glassmorphism Hero
+.hero-section-glass {
+    background-image: linear-gradient(rgba(24, 26, 27, 0.5), rgba(24, 26, 27, 0.5)), url('https://images.unsplash.com/photo-1517524008697-84bbe3c3a9a8?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 0;
+}
+
+.hero-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+// Advanced Product Card
+.product-card-v2 {
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; // <-- Transisi lebih cepat & simpel
+    overflow: hidden;
+    border: 1px solid transparent; // <-- Tambahkan border transparan
+
+    &:hover {
+        // Efek hover yang lebih subtle
+        border-color: var(--bs-primary);
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, .075);
+    }
+
+    .product-card-img-container {
+        overflow: hidden;
+
+        .card-img-top {
+            transition: transform 0.3s ease;
+        }
+    }
+
+    &:hover .card-img-top {
+        transform: scale(1.03); // <-- Efek zoom sedikit dikurangi
+    }
+
+    .btn {
+        transition: all 0.3s ease;
+    }
+}
+
+/* Gaya untuk Hero Carousel Splide.js */
+.splide__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+#main-carousel .splide__slide {
+    position: relative;
+}
+
+.carousel-caption-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: #fff;
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+#thumbnail-carousel .splide__slide {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+#thumbnail-carousel .splide__slide.is-active {
+    opacity: 1;
+    border-color: var(--bs-primary);
+}
+
+
+/* Gaya untuk Filter Merek dengan Logo */
+.brand-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 80px;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background-color: #fff;
+
+    img {
+        height: 30px;
+        filter: grayscale(100%);
+        opacity: 0.6;
+    }
+
+    span {
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: #6c757d;
+    }
+
+    &:hover {
+        border-color: var(--bs-primary);
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, .075);
+    }
+
+    &.active {
+        border-color: var(--bs-primary);
+        background-color: var(--bs-primary-bg-subtle);
+
+        img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        span {
+            color: var(--bs-primary);
+            font-weight: 600;
+        }
+    }
+}
+
+
+/* Gaya untuk Skeleton Loading Card */
+@keyframes skeleton-glow {
+    from {
+        background-color: #e9ecef;
+    }
+
+    to {
+        background-color: #ced4da;
+    }
+}
+
+.skeleton-card .skeleton-image {
+    width: 100%;
+    height: 220px;
+    background-color: #e9ecef;
+    animation: skeleton-glow 1.5s infinite alternate;
+}
+
+.skeleton-card .skeleton-text {
+    height: 1.2rem;
+    background-color: #e9ecef;
+    border-radius: 0.25rem;
+    animation: skeleton-glow 1.5s infinite alternate;
+}
+
+/* Gaya untuk Empty State */
+.empty-state img {
+    filter: grayscale(80%);
+    opacity: 0.5;
+    max-width: 100%;
+}
+
+/* Gaya Umum */
+.page-header {
+    background-color: #f8f9fa;
+    padding: 4rem 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Kartu Mobil */
+.product-card-v2 {
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border: 1px solid #dee2e6;
+
+    &:hover {
+        border-color: var(--bs-primary);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .1);
+    }
+}
+
+/* Filter Section */
+.filter-section .btn-group .btn {
+    text-transform: capitalize;
+}
+
+/* Halaman Tentang Kami */
+.team-member-card {
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* Halaman Detail Mobil */
+.description-content p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+/* ================================================
+   UTILITY & HOVER STYLES
+   ================================================ */
+.object-fit-cover {
+    object-fit: cover !important;
+}
+
+.transition-transform {
+    transition: transform 0.3s ease-in-out;
+}
+
+.transition-opacity {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.card-hover-effect {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+
+        // Zoom image inside
+        img.transition-transform {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.hover-opacity-100:hover {
+    opacity: 1 !important;
+}
+
+/* Fix untuk layout yang pecah jika container gambar hilang */
+.col .card {
+    height: 100%;
+}

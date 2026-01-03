@@ -1,0 +1,10 @@
+// resources/scss/app.scss
+
+// Import Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+// Impor Splide.js
+@import '@splidejs/splide/dist/css/splide.min.css';
+
+// Import kustomisasi kita
+@import 'custom-styles';
