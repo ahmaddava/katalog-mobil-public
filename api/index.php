@@ -36,7 +36,7 @@ $app->useStoragePath('/tmp/storage');
 
 // Override path bootstrap cache agar tidak error "readonly"
 // Kita arahkan penulisan cache (packages.php, services.php) ke /tmp
-$app->useBootstrapPath('/tmp/cache');
+$app->useBootstrapPath('/tmp');
 
 // 5. Handle Request
 $app->handleRequest(Request::capture());
